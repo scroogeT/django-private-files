@@ -25,7 +25,7 @@ need to pass your own callable to the ``condition`` parameter::
 		from private_files import PrivateFileField
 
 		def is_owner(request, instance):
-		    return (not request.user.is_anonymous()) and request.user.is_authenticated and
+		    return (not request.user.is_anonymous) and request.user.is_authenticated and
 				   instance.owner.pk == request.user.pk
 
 		class FileSubmission(models.Model):
